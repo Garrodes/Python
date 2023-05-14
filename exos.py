@@ -753,44 +753,5 @@ px = 2
 py = 0.75
 pz = 0.25
 
-def reverse(h):
-  return h[::-1]
 
-
-code = "00ff9c0402030201ffff0b5a0791233010210068040b917120336603f800002140206165"
-
-def reverse_octet(code):
-  i = len(code) - 2
-  reversed_code = ""
-  while i >= 0:
-    octet = code[i:i + 2]
-    reversed_code += octet + " "
-    i = i - 2
-  return reversed_code
-def hex_to_binary(hex):
-  B=''
-  for x in hex:
-    x_bin=bin(int(x, 16))
-    
-  return B
-def seven_bits(binary):
-  L=[]
-  i=0
-  while i+7<len(binary):
-    L.append(binary[i:i+7])
-    i+=7
-  return L
-def bin_to_dec(L):
-  D= []
-  for x in L:
-    D.append(int(x))
-  return D
-def ascii_value(D):
-  A=[]
-  for x in D:
-    A.append(chr(x))
-  return A
-
-R = reverse_octet(code)
-print(hex_to_binary(R))
 
