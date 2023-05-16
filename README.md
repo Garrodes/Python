@@ -1,1 +1,1 @@
-Répertoire pour avoir une trace d'exercices et de tests lors de suivis de MOOC. 
+Répertoire pour avoir une trace d'exercices et de tests lors de suivi de MOOC. 
