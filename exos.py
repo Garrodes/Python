@@ -742,6 +742,68 @@ def variance(L):
 def ecart_type(L):
   return math.sqrt(variance(L))
 
+#6.4 Liste de diviseurs
+
+#6.4.1
+def list_diviseur(n):
+  div=[]
+  i=1
+  while i <=n:
+	   if n%i == 0 : 
+		    div.append(i)
+	   i+=1
+  return div
+#6.4.2
+def list_diviseur_impair(n):
+  div=[]
+  i=1
+  while i <=n:
+	   if n%i == 0 : 
+		    div.append(i)
+	   i+=2
+  return div
+#6.4.3	
+def list_diviseur_pair(n):
+  div=[]
+  i=2
+  while i <=n:
+	   if n%i == 0 : 
+		    div.append(i)
+	   i+=2
+  return div
+
+#6.7 Découpage      
+
+#6.7.1
+def decoupage_simple(i,j,L):
+  if i>=0 and j>=0:
+    return L[min([i,j]):max([i,j])]
+#6.7.2
+def decoupage_pas(i,j,L,p):
+   if i>=0 and j>=0 and p>0:
+    return L[min([i,j]):max([i,j]):p] 
+#6.7.3
+def decoupage_pas_inv(i,j,L,p):
+  reversed=[]
+  k=i
+  while abs(k)<j:
+    if k <len(L):
+      reversed.append(L[k])
+    k=k+p
+  return reversed
+
+  
+#7.2 Nombre d'occurrence du maximum dans une liste
+def nb_de_max(L):
+  max=L[0]
+  n=0
+  for x in L:
+    if x > max:
+      max=x
+      n=1
+    elif x == max:
+      n+=1
+  return (max,n)
 
 #JEU DE TEST
 
