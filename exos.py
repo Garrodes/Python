@@ -805,6 +805,40 @@ def nb_de_max(L):
       n+=1
   return (max,n)
 
+#7.4 Alignement de points
+# Pour cet exercice on définit le type informel : Point: tuple[int,int]
+
+#7.4.1
+def vecteur(p1,p2):
+  """
+  Point*Point=>List
+  """
+  return [p2[0]-p1[0],p2[1]-p1[1]]
+  
+#7.4.2
+def alignes(p1,p2,p3):
+  v1=vecteur(p1,p2)
+  v2=vecteur(p2,p3)
+  if v1[0]/v2[0]==v1[1]/v2[1]:
+    return True
+  else:
+    return False
+#7.4.3
+def alignement(L):
+  """
+  Liste[Point] => Bool
+  """
+  al=[]
+  i=0
+  while i<len(L)-2:
+    if alignes(L[i],L[i+1],L[i+2]):
+      al.append(1)
+    i+=1
+  if len(al)==len(L)-2:
+    return True
+  else:
+    return False
+
 #JEU DE TEST
 
 x = 2
@@ -816,4 +850,12 @@ py = 0.75
 pz = 0.25
 
 
+l = [3,5,5,4,6,6,6]
+ll=['am','stram','gram','meanie','miny','moe','catch','atiger','byhis','toe']
 
+px=[3,5]
+py=[4,7]
+pz=[6,11]
+pw=[1,1]
+Lp=[px,py,pz,pw]
+print(alignement(Lp))
