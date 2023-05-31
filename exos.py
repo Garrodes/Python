@@ -839,6 +839,33 @@ def alignement(L):
   else:
     return False
 
+
+#exo indépendant: calculer somme, moyenne, len de nombres insérer, la boucle s'arrete quand on lui indique 'done'
+def input_loop():
+  L=[]
+  n=0
+  while True: #peut etre une très moche façon de faire une boucle perpetuelle 
+    n=input('Enter a number: ')
+    try:
+      n= float(n)
+    except:
+      if n == 'done':
+        break
+      else:
+        print('Mauvais type de données, type attendu: integer or float')
+        break
+    L.append(n)
+  s=0
+  j=0
+  for i in L:
+    j+=1
+    s+=i
+  avg=s/j
+  print('Somme: ',s)
+  print('Len: ',j)
+  print('Average: ',avg)
+
+
 #JEU DE TEST
 
 x = 2
@@ -858,4 +885,4 @@ py=[4,7]
 pz=[6,11]
 pw=[1,1]
 Lp=[px,py,pz,pw]
-print(alignement(Lp))
+
