@@ -865,6 +865,50 @@ def input_loop():
   print('Len: ',j)
   print('Average: ',avg)
 
+# de freecodecamp(fcc) : Scientific Computing with Python
+# renvoie un dictionnaire de chaque mot présent d'un fichier ainsi que son nombre d'occurence dans celui-ci
+def count_words():
+  name=input('Enter file name:')
+  handle=open(name)
+  counts=dict()
+  for line in handle:
+    words=line.split()
+    for word in words:
+      counts[word]=counts.get(word,0) + 1 
+  return counts
+# (fcc)renvoie le mot le plus présent d'un text
+def max_word():
+  counts=count_words()
+  biggest_count= None
+  biggest_word= None
+  for word,count in counts.items():
+    if biggest_count is None or count > biggest_count:
+      biggest_word=word
+      biggest_count=count
+  return {biggest_word:biggest_count}
+
+# (fcc)10 mots les plus présents d'un algo
+def ten_words(counts):
+  rev = sorted([(v,k) for k,v in counts.items() ], reverse=True)[:10]
+  return rev
+
+
+# exo recreer la methode split en fonction avec en argument un string e et le séparateur
+def split(str, r):
+  """
+  String*String->List
+  """
+  L=[]
+  w=''
+  for i in str:
+    if i != r:
+      w+=i
+    else:
+      if w != '':
+        L.append(w) # on ajoute à L si 
+        w='' # reset du mot 
+  L.append(w) # ajout du dernier mot
+  return L
 
 #JEU DE TEST
 
